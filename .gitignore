@@ -46,3 +46,6 @@ web/**/dist/
 web/**/.vite/
 web/.pnpm-store/
 web/**/*.local
+
+### Cursor ###
+.cursor/
