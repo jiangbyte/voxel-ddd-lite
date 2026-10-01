@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { NDescriptions, NDescriptionsItem, NSkeleton, NSpace, NTag, NText, useMessage } from 'naive-ui'
-import { ApiError, formatDateTime } from '@hei/shared'
-import type { UserProfile } from '@hei/shared'
+import { ApiError, formatDateTime } from '@voxel/shared'
+import type { UserProfile } from '@voxel/shared'
 import { useAuthStore } from '@/stores/auth'
 
 const auth = useAuthStore()

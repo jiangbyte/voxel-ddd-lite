@@ -3,8 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@hei/shared": ["./src/index.ts"],
-      "@hei/shared/*": ["./src/*"]
+      "@voxel/shared": ["./src/index.ts"],
+      "@voxel/shared/*": ["./src/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.vue", "env.d.ts"]

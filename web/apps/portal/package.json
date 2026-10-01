@@ -1,5 +1,5 @@
 {
-  "name": "@hei/portal",
+  "name": "@voxel/portal",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -10,7 +10,7 @@
     "typecheck": "vue-tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "@hei/shared": "workspace:*",
+    "@voxel/shared": "workspace:*",
     "@vicons/ionicons5": "^0.13.0",
     "naive-ui": "^2.45.3",
     "pinia": "^3.0.3",

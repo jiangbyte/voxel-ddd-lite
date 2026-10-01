@@ -1,4 +1,4 @@
-import { createAuthApi, createHttpClient, createTokenStorage } from '@hei/shared'
+import { createAuthApi, createHttpClient, createTokenStorage } from '@voxel/shared'
 
 const tokenStorage = createTokenStorage('portal')
 

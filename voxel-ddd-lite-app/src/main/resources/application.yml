@@ -1,0 +1,98 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: voxel-ddd-lite
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/voxel?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: infra123!
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      validation-query: SELECT 1
+      test-while-idle: true
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password: infra123!
+      database: 0
+      timeout: 3s
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: io.github.jiangbyte.voxel.infrastructure.dao.user.po
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+
+# CORS / JWT（账户演示必需；无 enabled 开关）
+voxel:
+  ddd:
+    cors:
+      allowed-origins:
+        - "*"
+      allowed-headers:
+        - "*"
+      allowed-methods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - PATCH
+        - OPTIONS
+      allow-credentials: false
+      max-age: 3600
+    jwt:
+      secret: voxel-ddd-lite-jwt-secret-change-me-32bytes!!
+      expire-seconds: 7200
+      header: Authorization
+      token-prefix: "Bearer "
+      issuer: voxel-ddd-lite
+
+# ---- 需要 S3 兼容存储时：取消父 POM / infrastructure 中 AWS SDK 注释，拷回 config/s3，并取消下方注释 ----
+# s3:
+#   endpoint: http://127.0.0.1:9000
+#   region: us-east-1
+#   access-key: admin
+#   secret-key: infra123!
+#   bucket: voxel
+#   path-style-access: true
+
+# ---- 需要 Milvus 时：取消父 POM 中 milvus 依赖注释，拷回 config/milvus，并取消下方注释 ----
+# milvus:
+#   uri: http://127.0.0.1:19530
+#   database: default
+#   username: root
+#   password: infra123!
+
+# ---- 需要 Spring AI 时：取消父 POM 中 spring-ai-bom 注释，并配置 OPENAI_API_KEY ----
+# spring:
+#   ai:
+#     openai:
+#       api-key: ${OPENAI_API_KEY:}
+#       base-url: ${OPENAI_BASE_URL:https://api.openai.com}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+  group-configs:
+    - group: default
+      paths-to-match: /**
+      packages-to-scan: io.github.jiangbyte.voxel.trigger.http.user
+
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn

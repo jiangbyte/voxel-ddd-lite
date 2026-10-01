@@ -2,8 +2,8 @@
 import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { NDescriptions, NDescriptionsItem, NSkeleton, NSpace, NTag, NText, useMessage } from 'naive-ui'
-import { ApiError } from '@hei/shared'
-import type { PublicUser } from '@hei/shared'
+import { ApiError } from '@voxel/shared'
+import type { PublicUser } from '@voxel/shared'
 import { authApi } from '@/api'
 
 const route = useRoute()

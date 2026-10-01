@@ -10,7 +10,7 @@ importers:
 
   apps/admin:
     dependencies:
-      '@hei/shared':
+      '@voxel/shared':
         specifier: workspace:*
         version: link:../../packages/shared
       '@vicons/ionicons5':
@@ -44,7 +44,7 @@ importers:
 
   apps/portal:
     dependencies:
-      '@hei/shared':
+      '@voxel/shared':
         specifier: workspace:*
         version: link:../../packages/shared
       '@vicons/ionicons5':

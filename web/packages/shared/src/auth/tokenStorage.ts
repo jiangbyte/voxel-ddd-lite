@@ -1,8 +1,8 @@
 import type { AppScope } from '../types'
 
 const TOKEN_KEYS: Record<AppScope, string> = {
-  portal: 'hei_portal_token',
-  admin: 'hei_admin_token',
+  portal: 'voxel_portal_token',
+  admin: 'voxel_admin_token',
 }
 
 export function createTokenStorage(scope: AppScope) {

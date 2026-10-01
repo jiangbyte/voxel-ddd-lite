@@ -1,0 +1,9 @@
+io.github.jiangbyte.voxel.infrastructure.config.datasource.DatasourceAutoConfiguration
+io.github.jiangbyte.voxel.infrastructure.config.mybatis.MybatisPlusAutoConfiguration
+io.github.jiangbyte.voxel.infrastructure.config.redis.RedisAutoConfigure
+# 需要对象存储时取消下一行注释，并恢复 S3 依赖与实现类
+# io.github.jiangbyte.voxel.infrastructure.config.s3.S3AutoConfiguration
+# 需要向量库时取消下一行注释，并恢复 Milvus 依赖与实现类
+# io.github.jiangbyte.voxel.infrastructure.config.milvus.MilvusAutoConfiguration
+# MinIO 已弃用开关模式；如仍用 MinIO SDK 可取消注释
+# io.github.jiangbyte.voxel.infrastructure.config.minio.MinioAutoConfiguration

@@ -1,4 +1,4 @@
-import { createAuthApi, createAdminUserApi, createHttpClient, createTokenStorage } from '@hei/shared'
+import { createAuthApi, createAdminUserApi, createHttpClient, createTokenStorage } from '@voxel/shared'
 
 const tokenStorage = createTokenStorage('admin')
 

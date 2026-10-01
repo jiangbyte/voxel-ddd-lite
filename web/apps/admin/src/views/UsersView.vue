@@ -18,8 +18,8 @@ import {
   type DataTableColumns,
   type SelectOption,
 } from 'naive-ui'
-import { ApiError, formatDateTime } from '@hei/shared'
-import type { UserProfile, UserType } from '@hei/shared'
+import { ApiError, formatDateTime } from '@voxel/shared'
+import type { UserProfile, UserType } from '@voxel/shared'
 import { adminUserApi } from '@/api'
 
 const message = useMessage()

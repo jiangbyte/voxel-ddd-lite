@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { NConfigProvider, NDialogProvider, NMessageProvider, zhCN, dateZhCN } from 'naive-ui'
 import { RouterView } from 'vue-router'
-import { naiveThemeOverrides } from '@hei/shared'
+import { naiveThemeOverrides } from '@voxel/shared'
 </script>
 
 <template>

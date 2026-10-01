@@ -74,7 +74,7 @@ async function onLogout() {
       :native-scrollbar="false"
     >
       <div class="logo" :class="{ collapsed }">
-        {{ collapsed ? 'H' : 'Hei Admin' }}
+        {{ collapsed ? 'V' : 'Voxel Admin' }}
       </div>
       <NMenu
         :collapsed="collapsed"

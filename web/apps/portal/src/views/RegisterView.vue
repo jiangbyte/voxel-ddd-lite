@@ -2,7 +2,7 @@
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { NCard, NForm, NFormItem, NInput, NButton, NSpace, NFlex, NText, useMessage } from 'naive-ui'
-import { ApiError } from '@hei/shared'
+import { ApiError } from '@voxel/shared'
 import { useAuthStore } from '@/stores/auth'
 
 const router = useRouter()

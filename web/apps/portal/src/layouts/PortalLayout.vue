@@ -20,7 +20,7 @@ async function onLogout() {
     <NLayoutHeader bordered class="header">
       <NSpace align="center" :size="16">
         <RouterLink class="brand" to="/">
-          <NText strong>Hei Portal</NText>
+          <NText strong>Voxel Portal</NText>
         </RouterLink>
         <NButton text @click="router.push('/')">首页</NButton>
         <NButton v-if="loggedIn" text @click="router.push('/me')">我的账号</NButton>

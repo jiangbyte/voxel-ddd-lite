@@ -1,13 +1,13 @@
 {
-  "name": "hei-web",
+  "name": "voxel-web",
   "private": true,
   "packageManager": "pnpm@9.15.9",
   "scripts": {
-    "dev:portal": "pnpm --filter @hei/portal dev",
-    "dev:admin": "pnpm --filter @hei/admin dev",
-    "build:portal": "pnpm --filter @hei/portal build",
-    "build:admin": "pnpm --filter @hei/admin build",
-    "build": "pnpm -r --filter @hei/shared --filter @hei/portal --filter @hei/admin run build",
+    "dev:portal": "pnpm --filter @voxel/portal dev",
+    "dev:admin": "pnpm --filter @voxel/admin dev",
+    "build:portal": "pnpm --filter @voxel/portal build",
+    "build:admin": "pnpm --filter @voxel/admin build",
+    "build": "pnpm -r --filter @voxel/shared --filter @voxel/portal --filter @voxel/admin run build",
     "typecheck": "pnpm -r run typecheck"
   },
   "engines": {

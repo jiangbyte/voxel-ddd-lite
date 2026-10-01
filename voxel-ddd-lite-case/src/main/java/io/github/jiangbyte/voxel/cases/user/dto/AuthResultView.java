@@ -1,0 +1,17 @@
+package io.github.jiangbyte.voxel.cases.user.dto;
+
+import io.github.jiangbyte.voxel.domain.user.model.valobj.UserType;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+/**
+ * 注册/登录业务结果（不含 Token）。
+ */
+@Getter
+@AllArgsConstructor
+public class AuthResultView {
+
+    private final Long userId;
+    private final String username;
+    private final UserType userType;
+}

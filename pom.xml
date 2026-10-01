@@ -12,19 +12,20 @@
     </parent>
 
     <groupId>io.github.jiangbyte</groupId>
-    <artifactId>hei-ddd-lite</artifactId>
+    <artifactId>voxel-ddd-lite</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>hei-ddd-lite</name>
-    <description>最基础 DDD 单体模板脚手架：常见六层工程模型 + 账户体系最小示例 + 可选 MinIO</description>
+    <name>voxel-ddd-lite</name>
+    <description>DDD 七层模板：账户竖切 + web；S3/Milvus/Spring AI 以注释块接入（无 enabled 开关）</description>
 
     <modules>
-        <module>hei-ddd-lite-types</module>
-        <module>hei-ddd-lite-api</module>
-        <module>hei-ddd-lite-trigger</module>
-        <module>hei-ddd-lite-domain</module>
-        <module>hei-ddd-lite-infrastructure</module>
-        <module>hei-ddd-lite-app</module>
+        <module>voxel-ddd-lite-types</module>
+        <module>voxel-ddd-lite-api</module>
+        <module>voxel-ddd-lite-domain</module>
+        <module>voxel-ddd-lite-infrastructure</module>
+        <module>voxel-ddd-lite-case</module>
+        <module>voxel-ddd-lite-trigger</module>
+        <module>voxel-ddd-lite-app</module>
     </modules>
 
     <properties>
@@ -38,6 +39,9 @@
         <mybatis-plus.version>3.5.17</mybatis-plus.version>
         <druid.version>1.2.28</druid.version>
         <minio.version>8.5.17</minio.version>
+        <aws.sdk.version>2.31.78</aws.sdk.version>
+        <milvus.version>2.5.12</milvus.version>
+        <spring-ai.version>2.0.0</spring-ai.version>
         <knife4j.version>5.7.4</knife4j.version>
         <jjwt.version>0.12.6</jjwt.version>
         <lombok.version>1.18.38</lombok.version>
@@ -51,32 +55,37 @@
             <!-- 内部模块：常见六层工程模型（types / api / trigger / domain / infrastructure / app） -->
             <dependency>
                 <groupId>io.github.jiangbyte</groupId>
-                <artifactId>hei-ddd-lite-types</artifactId>
+                <artifactId>voxel-ddd-lite-types</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.jiangbyte</groupId>
-                <artifactId>hei-ddd-lite-api</artifactId>
+                <artifactId>voxel-ddd-lite-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.jiangbyte</groupId>
-                <artifactId>hei-ddd-lite-trigger</artifactId>
+                <artifactId>voxel-ddd-lite-trigger</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.jiangbyte</groupId>
-                <artifactId>hei-ddd-lite-domain</artifactId>
+                <artifactId>voxel-ddd-lite-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.jiangbyte</groupId>
-                <artifactId>hei-ddd-lite-infrastructure</artifactId>
+                <artifactId>voxel-ddd-lite-infrastructure</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.jiangbyte</groupId>
-                <artifactId>hei-ddd-lite-app</artifactId>
+                <artifactId>voxel-ddd-lite-case</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.jiangbyte</groupId>
+                <artifactId>voxel-ddd-lite-app</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -96,11 +105,34 @@
                 <artifactId>mybatis-plus-jsqlparser</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
+            <!-- MinIO SDK 默认注释；需要时取消注释。推荐改用下方 S3 SDK。
             <dependency>
                 <groupId>io.minio</groupId>
                 <artifactId>minio</artifactId>
                 <version>${minio.version}</version>
             </dependency>
+            -->
+            <!-- S3 / Milvus / Spring AI：默认注释，需要时取消注释
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>bom</artifactId>
+                <version>${aws.sdk.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.milvus</groupId>
+                <artifactId>milvus-sdk-java</artifactId>
+                <version>${milvus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>${spring-ai.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            -->
             <!-- Knife4j：Spring Boot 4 WebMVC 专用 OpenAPI3 starter -->
             <dependency>
                 <groupId>com.baizhukui</groupId>

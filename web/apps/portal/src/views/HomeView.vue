@@ -10,7 +10,7 @@ const router = useRouter()
 <template>
   <NSpace vertical :size="16">
     <div>
-      <NText style="font-size: 22px; font-weight: 600">Hei 用户中心</NText>
+      <NText style="font-size: 22px; font-weight: 600">Voxel 用户中心</NText>
       <div>
         <NText depth="3">前台站点：注册、登录与账号信息。后台管理请使用独立 Admin 工程。</NText>
       </div>

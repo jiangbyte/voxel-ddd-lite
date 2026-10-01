@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
-import type { UserProfile } from '@hei/shared'
+import type { UserProfile } from '@voxel/shared'
 import { authApi, tokenStorage } from '@/api'
 
 export const useAuthStore = defineStore('portal-auth', () => {
